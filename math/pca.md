@@ -5,10 +5,10 @@ PCA是一种数据线性降维的方法，在学习PCA之前，先回顾一些�
 
 <!-- TOC depthFrom:1 depthTo:6 withLinks:1 updateOnSave:1 orderedList:0 -->
 
-- [主成分分析 - PCA (Principal Component Analysis)](#主成分分析-pca-principal-component-analysis)
-	- [方差和协方差 Varianes & Covariances](#方差和协方差-varianes-covariances)
+- [主成分分析 - PCA (Principal Component Analysis)](#主成分分析---pca-principal-component-analysis)
+	- [方差和协方差 Varianes \& Covariances](#方差和协方差-varianes--covariances)
 		- [方差 Variance](#方差-variance)
-		- [Covariance 协方差](#covariance-协方差)
+		- [协方差 Covariance](#协方差-covariance)
 		- [Rules 方差规则](#rules-方差规则)
 	- [积 Product](#积-product)
 		- [点积 Dot product](#点积-dot-product)
@@ -105,6 +105,7 @@ PCA是一种数据线性降维的方法，在学习PCA之前，先回顾一些�
  _〈x,y〉=cov[x,y]_
 
 其中
+
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?||x||&space;=&space;\sqrt{cov[x,x]}=\sqrt{var[x]}=\sigma(x)\text{ and }||y||=\sigma(y)" title="||x|| = \sqrt{cov[x,x]} = \sqrt{var[x]} = \sigma(x)\text{ and }||y|| = \sigma(y)" />
 </p>
@@ -130,6 +131,7 @@ PCA是一种数据线性降维的方法，在学习PCA之前，先回顾一些�
 </p>
 
 ### 投影到高维空间 Projections onto higher-dimentional subspaces
+
 <p align="center">
   <img src="img/projection-onto-2d-subspace.png" width="300" />
 </p>
@@ -139,9 +141,13 @@ PCA是一种数据线性降维的方法，在学习PCA之前，先回顾一些�
 2. _〈π<sub>u</sub>(x) - x, b<sub>i</sub>〉= 0, i=1, ..., M_ (正交)
 
 其中
+
 <p align="center">
-<img src="https://latex.codecogs.com/gif.latex?\lambda&space;=\begin{bmatrix}&space;\lambda&space;_{xi}&space;\\&space;\vdots&space;\\&space;\lambda&space;_{m}&space;\end{bmatrix}$,&space;$B&space;=&space;\begin{bmatrix}b_1&space;|&space;\cdots&space;|&space;b_M\end{bmatrix}" title="\lambda =\begin{bmatrix} \lambda _{xi} \\ \vdots \\ \lambda _{m} \end{bmatrix}$, $B = \begin{bmatrix}b_1 | \cdots | b_M\end{bmatrix}" />
+<img src="https://latex.codecogs.com/gif.latex?\lambda%20=%20\begin{bmatrix}%20\lambda%20_{xi}%20\\%20\vdots%20\\%20\lambda%20_{m}%20\end{bmatrix},%20B%20=%20\begin{bmatrix}b_1%20\|%20\cdots%20\|%20b_M\end{bmatrix}" 
+title="\lambda = \begin{bmatrix} \lambda _{xi} \\ \vdots \\ \lambda _{m} \end{bmatrix}, B = \begin{bmatrix}b_1 | \cdots | b_M\end{bmatrix}" />
 </p>
+
+
 
 推导如下：
 <p align="center">
@@ -171,7 +177,6 @@ _z<sub>n</sub> = B<sup>T</sup>X ∈ R<sup>M</sup>_ 是 _X_ 在低维空间 _B_ �
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\tilde{x}&space;=&space;BB^T\mathcal{x}" title="\tilde{x} = BB^T\mathcal{x}" />
 </p>
-
 
 对于PCA问题，其**优化目标**为：样本点到新的超平面上的距离足够近，等于最小化下面的成本函数，**公式(_C_)**：
 <p align="center">

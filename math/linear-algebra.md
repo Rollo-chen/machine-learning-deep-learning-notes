@@ -16,7 +16,7 @@
 		- [Linear independent 线性无关](#linear-independent-线性无关)
 	- [Matrices 矩阵](#matrices-矩阵)
 		- [Transformation 矩阵变换](#transformation-矩阵变换)
-			- [矩阵与旋转角度 _θ_ 之间的关系](#矩阵与旋转角度-之间的关系)
+			- [矩阵与旋转角度 _θ_ 之间的关系](#矩阵与旋转角度-θ-之间的关系)
 		- [矩阵秩 Matrix Rank](#矩阵秩-matrix-rank)
 		- [逆矩阵 Matrix inverse](#逆矩阵-matrix-inverse)
 			- [高斯消元法到找到逆矩阵](#高斯消元法到找到逆矩阵)
@@ -156,6 +156,7 @@ Transform (rotate) _R_ in _B_'s coordinates:  _B<sup>-1</sup>RB_
 Where $E$ is calculated via the gram-schmidt process, $T_E$ is the transformation matrix in the basic plane. $E^{-1} \cdot r$ stands for coverting $r$ to $E$'s plane, $T_E \cdot E^{-1} \cdot r$ stands for doing $T_E$ transformation in $E$'s plane. Finally, $E$ goes back to the original plane.
 
 <p align="center"><img src="./img/matrix-reflecting-in-a-plane.png" width="300"/></p>
+
 ### 特征向量和特征值 Eigenvectors and Eigenvalues
 对于一个给定的方阵 _A_，它的特征向量（eigenvector）_v_ 经过这个线性变换之后，得到的新向量仍然与原来的 _v_ 保持在同一条直线上，但其长度或方向也许会改变。
 它们满足： _**A**v = **λ**v_。
@@ -180,9 +181,16 @@ _λ<sup>2</sup>-(a+d)λ+ad-bc=0_ ，得到 _λ_ 并计算特征向量。
 </p>
 
 <p align="center"><img src="./img/Eigenbasis-example.png" width="300"/></p>
-其中，_C_ 是**特征向量**(eigenvectors)，$D$由**特征值**(eigenvalues)构成.
+
+其中， _C_ 是**特征向量**(eigenvectors)，$D$由**特征值**(eigenvalues)构成.
 
 一个例子：
+矩阵 **C**: 它的列是矩阵的特征向量。
+矩阵 **D**: 它是对角矩阵，其对角线元素是特征值 \(\lambda_1, \lambda_2, \ldots, \lambda_n\)。
+矩阵 **T**: 是从标准基到 **C** 的特征向量所形成的基的变换矩阵，计算为 \(T = C D C^{-1}\)。
+矩阵 **T^n**: 表示 **T** 的 \(n\) 次幂，可以通过相似变换公式 \(T^n = C D^n C^{-1}\) 计算。
+
+
 <p align="center">
 <img src="https://latex.codecogs.com/gif.latex?\begin{align*}&space;T&=\begin{pmatrix}1&1\\0&2\end{pmatrix},C=\begin{pmatrix}1&1\\0&1\end{pmatrix},C^{-1}=\begin{pmatrix}&space;1&space;&&space;-1&space;\\0&1\end{pmatrix},D=\begin{pmatrix}1&0\\0&2\end{pmatrix}\\&space;T^2&=\begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}1&0\\0&2\end{pmatrix}^{2}\begin{pmatrix}&space;1&-1\\0&1\end{pmatrix}=\begin{pmatrix}1&3\\0&4\end{pmatrix}&space;\end{align*}" title="\begin{align*} T&=\begin{pmatrix}1&1\\0&2\end{pmatrix},C=\begin{pmatrix}1&1\\0&1\end{pmatrix},C^{-1}=\begin{pmatrix} 1 & -1 \\0&1\end{pmatrix},D=\begin{pmatrix}1&0\\0&2\end{pmatrix}\\ T^2&=\begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}1&0\\0&2\end{pmatrix}^{2}\begin{pmatrix} 1&-1\\0&1\end{pmatrix}=\begin{pmatrix}1&3\\0&4\end{pmatrix} \end{align*}" />
 </p>
